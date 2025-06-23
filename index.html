@@ -2,14 +2,71 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Landing Page</title>
+  <title>DBA Design Build Acoustics</title>
   <style>
-    body { font-family: sans-serif; text-align: center; padding: 50px; }
-    h1 { color: #333; }
+    body {
+      margin: 0;
+      padding: 0;
+      background: #111;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    .changing-text {
+      font-size: 1.5em;
+      height: 40px;
+    }
+    p {
+      font-size: 1.2em;
+      margin: 20px 0;
+    }
+    .contact-button {
+      display: inline-block;
+      padding: 12px 24px;
+      color: #111;
+      background: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      margin: 20px 0;
+    }
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.9em;
+      color: #888;
+    }
   </style>
 </head>
 <body>
-  <h1>Welcome to My Site!</h1>
-  <p>This is my simple landing page hosted on Cloudflare Pages.</p>
+
+  <h1>DESIGN. BUILD. ACOUSTICS.</h1>
+  <div class="changing-text" id="changingText">CREATE CALM</div>
+  <p>We design and build architectural acoustic solutions.</p>
+  <a href="mailto:info@designbuildacoustics.com" class="contact-button">Contact Us</a>
+
+  <footer>
+    Email: info@designbuildacoustics.com | Phone: 07956839366
+  </footer>
+
+  <script>
+    const texts = ['CREATE CALM', 'CREATE SERENITY', 'CREATE FOCUS'];
+    let count = 0;
+    const textElement = document.getElementById('changingText');
+    setInterval(() => {
+      count = (count + 1) % texts.length;
+      textElement.textContent = texts[count];
+    }, 2000);
+  </script>
+
 </body>
 </html>
